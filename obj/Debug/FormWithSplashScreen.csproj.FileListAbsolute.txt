@@ -1,0 +1,10 @@
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\bin\Debug\FormWithSplashScreen.exe.config
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\bin\Debug\FormWithSplashScreen.exe
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\bin\Debug\FormWithSplashScreen.pdb
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.csprojAssemblyReference.cache
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.SplashScreen.resources
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.Properties.Resources.resources
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.csproj.GenerateResource.cache
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.exe
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.pdb
+C:\Users\MEE\Source\Repos\FormWithSplashScreen\FormWithSplashScreen\obj\Debug\FormWithSplashScreen.Form1.resources
