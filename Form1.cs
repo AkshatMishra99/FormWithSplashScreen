@@ -15,6 +15,7 @@ namespace FormWithSplashScreen
     {
         Dictionary<string, Student> studentList = new Dictionary<string, Student>();
         bool found;
+        internal bool IsAnUpdate;
         public Form1()
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace FormWithSplashScreen
         {
             if (textBox1.Text.Length == 0)
             {
-
+                MessageBox.Show("First Enter a Roll Number!", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -62,6 +63,7 @@ namespace FormWithSplashScreen
                 else
                 {
                     MessageBox.Show("No result found!");
+                    found = false;
                 }
             }
         }
@@ -78,7 +80,7 @@ namespace FormWithSplashScreen
                 rst_Btn.Enabled = true;
             }
         }
-
+        
         private void upd_Btn_Click(object sender, EventArgs e)
         {
             if (found)
@@ -87,6 +89,9 @@ namespace FormWithSplashScreen
                 {
                     c.Enabled = true;
                 }
+                sub_Btn.Enabled = true;
+                rst_Btn.Enabled = true;
+                IsAnUpdate = true;
             }
         }
         OpenFileDialog op;
@@ -115,11 +120,12 @@ namespace FormWithSplashScreen
 
         private void sub_Btn_Click(object sender, EventArgs e)
         {
+            
             if (textBox1.Text.Length == 0)
             {
                 MessageBox.Show("Enter Valid Roll Number", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (studentList.ContainsKey(textBox1.Text))
+            else if (studentList.ContainsKey(textBox1.Text) && !IsAnUpdate)
             {
                 MessageBox.Show("Enter Valid Roll Number", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -144,8 +150,12 @@ namespace FormWithSplashScreen
             }
             else
             {
-                Student newStudent = new Student(nameInput.Text, addInput.Text, emailInput.Text, phInput.Text, new Bitmap(op.FileName));
-                studentList.Add(textBox1.Text, newStudent);
+                Student newStudent;
+                /*if (IsAnUpdate == true)
+                    newStudent = studentList[textBox1.Text];
+                else */
+                newStudent = new Student(nameInput.Text, addInput.Text, emailInput.Text, phInput.Text, new Bitmap(op.FileName));
+                studentList[textBox1.Text]=newStudent;
                 MessageBox.Show("Entry Successful", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 find_Btn.Enabled = true;
                 foreach (Control c in groupBox1.Controls)
@@ -165,7 +175,32 @@ namespace FormWithSplashScreen
                 sub_Btn.Enabled = false;
                 rst_Btn.Enabled = false;
                 pictureBox1.Image = null;
+                if (IsAnUpdate == true)
+                {
+                    IsAnUpdate = false;
+                }
             }
+        }
+
+        private void rst_Btn_Click(object sender, EventArgs e)
+        {
+            foreach(Control c in groupBox1.Controls)
+            {
+                try
+                {
+                    if(c.GetType() == typeof(TextBox))
+                    {
+                        TextBox t=(TextBox)c;
+                        t.Text = "";
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            op.FileName = "";
+            pictureBox1.Image = null;
         }
     }
     public class Student

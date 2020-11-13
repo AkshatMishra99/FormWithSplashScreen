@@ -235,6 +235,7 @@
             this.rst_Btn.TabIndex = 5;
             this.rst_Btn.Text = "Reset";
             this.rst_Btn.UseVisualStyleBackColor = true;
+            this.rst_Btn.Click += new System.EventHandler(this.rst_Btn_Click);
             // 
             // Form1
             // 
